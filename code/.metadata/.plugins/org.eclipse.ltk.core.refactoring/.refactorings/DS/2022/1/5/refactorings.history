@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Node.java&apos; to &apos;Accio/src/com.Accio.trees&apos;&#x0D;&#x0A;- Original project: &apos;DS&apos;&#x0D;&#x0A;- Destination element: &apos;Accio/src/com.Accio.trees&apos;&#x0D;&#x0A;- Original element: &apos;com.DSA.Stack.Node.java&apos;" description="Copy compilation unit" destination="=Accio/src&lt;com.Accio.trees" element1="/src&lt;com.DSA.Stack{Node.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1643333879768" units="1" version="1.0"/>
+</session>

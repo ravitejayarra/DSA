@@ -1,0 +1,179 @@
+package com.Accio.BST;
+
+import java.util.ArrayList;
+import java.util.Stack;
+
+public class BST {
+
+	
+	public ArrayList<Integer> l1 = new ArrayList<Integer>();
+	
+	public static void main(String[] args) {
+
+		
+		
+	      BST tree = new BST();
+	      Node root = tree.insert(null, 40);
+	      tree.insert(root, 20);
+	      tree.insert(root, 50);
+	      tree.insert(root, 9);
+	      tree.insert(root, 45);
+	  //    tree.R_inorder(root);
+	     
+	      
+//	      ArrayList<Integer> list1 = tree.l1;
+//	      
+//	      for (Integer i : list1) {
+//			System.out.print(i+ " ");
+//		}
+	      
+	      System.out.println();
+	      
+	      
+	      
+	      tree.Delete(root, 40);
+	      tree.R_inorder(root);
+	      
+       ArrayList<Integer> list2 = tree.l1;
+	      
+	      for (Integer i : list2) {
+			System.out.print(i+ " ");
+		}
+		
+	}
+	
+	
+	Node insert(Node root,int data) {
+		if(root == null) {
+			root = new Node(data, null, null);
+		}
+		else {
+			Node t = root;
+			Node prev = null;
+			
+			while(t != null) {
+				prev = t;
+				
+				if(data == t.data) { return root; }
+				else if(data > t.data) { t = t.right ; }
+				else if(data < t.data) { t = t.left ; } 
+				
+			}
+			
+			t = new Node(data, null, null);
+			if(data > prev.data) { prev.right = t; }
+			else { prev.left = t; }
+			
+		}
+		
+		
+		return root;
+	}
+	
+	
+	  void R_inorder(Node node) {
+		
+		if(node != null) {
+			R_inorder(node.left);
+			l1.add(node.data);
+			R_inorder(node.right);
+		}
+		
+	}
+	  
+	  
+	Node findNode(Node root,int key) {
+	
+		if(root==null) { return null; }
+		Node t = root;
+		while(t != null) {
+			
+			if(key == t.data) {
+				return t;
+			}
+			else if(key>t.data) {
+				t = t.right;
+			}
+			else {
+				t= t.left;
+			}
+		}
+		return null;
+	}
+	
+	
+	
+	int height(Node node) {
+		int x,y;
+		
+		if(node == null) { return 0; }
+		x = height(node.left);
+		y = height(node.right);
+		
+		return (x>y)?x+1:y+1;
+	}
+	
+	
+	void Delete(Node root,int key) {
+		
+		Node node = findNode(root, key);
+		if(node == null) {return ; }
+		
+		Stack<Node> stack = new Stack<Node>();
+		stack.push(node);
+		
+		while(!stack.isEmpty()) {
+			Node current = stack.pop();
+			
+			if(current.left == null && current.right == null) {
+				current.data = 0;
+				current = null;
+			}
+			
+			else if(height(current.left) > height(current.right)) {
+				Node inPre = InPre(current.left);
+				
+				current.data = inPre.data ;
+				stack.push(inPre);
+			}
+			
+			else  {
+				Node inSucc = InSucc(current.right);
+				
+				current.data = inSucc.data;
+				stack.push(inSucc);
+			}
+			
+		}
+		
+
+
+		
+		
+		
+		return;
+	}
+
+
+	 Node InPre(Node node) {
+
+		if(node == null) { return null; }
+		
+		while(node.right != null) {
+			node = node.right;
+		}
+		return node;
+	}
+	 
+	 Node InSucc(Node node) {
+		 
+		 if(node == null) { return null; }
+		 while(node.left != null) {
+			 node = node.left;
+		 }
+		 return node;
+	 }
+	
+	
+
+}

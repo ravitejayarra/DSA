@@ -1,0 +1,35 @@
+package com.DSA.Stack;
+
+public class Basic {
+
+	public static void main(String[] args) {
+
+//		    Stack stack = new Stack(3);
+//		    System.out.println(stack.isEmpty());
+//		    
+//		    stack.push(111);
+//		    stack.push(21);
+//		    stack.push(311);
+//		    stack.push(4);
+//		    stack.push(5);
+//		    System.out.println(stack.isEmpty());
+//		    System.out.println(stack.pop());
+//		    System.out.println(stack.pop());
+		
+		
+		
+/*		Stack_LL newStack = new Stack_LL();		
+		System.out.println(newStack.isEmpty());
+		newStack.push(11);
+		newStack.push(21);
+		newStack.push(31);
+		System.out.println(newStack.peek());
+		System.out.println(newStack.pop());
+		System.out.println(newStack.pop());
+		System.out.println(newStack.pop());
+		System.out.println(newStack.pop());
+		
+		*/
+	} 
+
+}

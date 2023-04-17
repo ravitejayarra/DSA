@@ -1,0 +1,19 @@
+package Com.basic.multithreading.DeadLock;
+
+public class DeadLockDemo implements Runnable {
+
+	
+	FirstResource fr = new FirstResource();
+	SecondResource sr = new SecondResource();
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+
+	}
+
+	public static void main(String[] args) {
+
+	}
+
+}

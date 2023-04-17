@@ -1,0 +1,194 @@
+package com.Accio.BST;
+
+import java.util.ArrayList;
+import java.util.Stack;
+
+public class BST {
+
+	
+	public ArrayList<Integer> l1 = new ArrayList<Integer>();
+	
+	public static void main(String[] args) {
+
+		
+		
+	      BST tree = new BST();
+	      Node root = tree.insert(null, 40);
+	      tree.insert(root, 20);
+	      tree.insert(root, 50);
+	      tree.insert(root, 9);
+	      tree.insert(root, 45);
+	  //    tree.R_inorder(root);
+	     
+	      
+//	      ArrayList<Integer> list1 = tree.l1;
+//	      
+//	      for (Integer i : list1) {
+//			System.out.print(i+ " ");
+//		}
+	      
+	      System.out.println();
+	      
+	      
+	      
+	      tree.Delete(root, 40);
+	      tree.R_inorder(root);
+	      
+       ArrayList<Integer> list2 = tree.l1;
+	      
+	      for (Integer i : list2) {
+			System.out.print(i+ " ");
+		}
+		
+	}
+	
+	
+	Node insert(Node root,int data) {
+		if(root == null) {
+			root = new Node(data, null, null);
+		}
+		else {
+			Node t = root;
+			Node prev = null;
+			
+			while(t != null) {
+				prev = t;
+				
+				if(data == t.data) { return root; }
+				else if(data > t.data) { t = t.right ; }
+				else if(data < t.data) { t = t.left ; } 
+				
+			}
+			
+			t = new Node(data, null, null);
+			if(data > prev.data) { prev.right = t; }
+			else { prev.left = t; }
+			
+		}
+		
+		
+		return root;
+	}
+	
+	
+	  void R_inorder(Node node) {
+		
+		if(node != null) {
+			R_inorder(node.left);
+			l1.add(node.data);
+			R_inorder(node.right);
+		}
+		
+	}
+	  
+	  
+	Node findNode(Node root,int key) {
+	
+		if(root==null) { return null; }
+		Node t = root;
+		Node prev =null;
+		while(t != null) {
+			
+			if(key == t.data) {
+				return prev;
+			}
+			else if(key>t.data) {
+				prev = t;
+				t = t.right;
+				
+			}
+			else {
+				prev = t;
+				t= t.left;
+			}
+		}
+		return null;
+	}
+	
+	
+	
+	int height(Node node) {
+		int x,y;
+		
+		if(node == null) { return 0; }
+		x = height(node.left);
+		y = height(node.right);
+		
+		return (x>y)?x+1:y+1;
+	}
+	
+	
+	void Delete(Node root,int key) {
+		
+		Node parent = findNode(root, key);
+		Node child = null;
+		if(parent == null) {return ; }
+		else if(parent.left.data == key) { child = parent.left; } 
+		else if(parent.right.data == key) { child = parent.right; }
+		
+		Stack<Node> stack = new Stack<Node>();
+		stack.push(child);
+		
+		while(!stack.isEmpty()) {
+			Node current = stack.pop();
+			
+			if(current.left == null && current.right == null) {
+				Delete_leaf(root,current.data);
+				return;
+			}
+			
+			else if(height(current.left) > height(current.right)) {
+				Node inPre = InPre(current.left);
+				
+				current.data = inPre.data ;
+				stack.push(inPre);
+			}
+			
+			else  {
+				Node inSucc = InSucc(current.right);
+				
+				current.data = inSucc.data;
+				stack.push(inSucc);
+			}
+			
+		}
+		
+
+
+		
+		
+		
+		return;
+	}
+
+
+	 private void Delete_leaf(Node root, int data) {
+		
+		 Node parent = findNode(root, data);
+		 if(parent.left.data == data) { parent.left =null;}
+		 if(parent.right.data== data) {parent.right =null;}
+	}
+
+
+	Node InPre(Node node) {
+
+		if(node == null) { return null; }
+		
+		while(node.right != null) {
+			node = node.right;
+		}
+		return node;
+	}
+	 
+	 Node InSucc(Node node) {
+		 
+		 if(node == null) { return null; }
+		 while(node.left != null) {
+			 node = node.left;
+		 }
+		 return node;
+	 }
+	
+	
+
+}

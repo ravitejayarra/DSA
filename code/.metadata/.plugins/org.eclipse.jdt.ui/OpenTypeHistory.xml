@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=SOLID/src&lt;com.solid.LSP{Product.java[Product" modifiers="1" timestamp="1658421365794"/>
+    <typeInfo handle="=DesignPatterns/C:\/Users\/pc\/Downloads\/eclipse-java-2021-03-R-win32-x86_64\/eclipse\/plugins\/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_15.0.2.v20210201-0955\/jre\/lib\/jrt-fs.jar`java.base=/module=/true=/=/javadoc_location=/https:\/\/docs.oracle.com\/en\/java\/javase\/15\/docs\/api\/=/&lt;java.lang(Runnable.class[Runnable" modifiers="1537" timestamp="1612153662000"/>
+    <typeInfo handle="=SOLID/src&lt;com.solid.OCP{customerProfile.java[customerProfile" modifiers="513" timestamp="1658409769213"/>
+    <typeInfo handle="=SOLID/src&lt;com.solid.LSP{Vehicle.java[Vehicle" modifiers="513" timestamp="1661875312150"/>
+    <typeInfo handle="=SOLID/src&lt;com.solid.ISP{IFax.java[IFax" modifiers="513" timestamp="1661922023823"/>
+    <typeInfo handle="=SOLID/src&lt;com.solid.ISP{IScan.java[IScan" modifiers="513" timestamp="1661922088207"/>
+    <typeInfo handle="=SOLID/src&lt;com.solid.ISP{IPrint.java[IPrint" modifiers="513" timestamp="1661921975994"/>
+    <typeInfo handle="=SOLID/src&lt;com.solid.DIP{productRepository.java[productRepository" modifiers="513" timestamp="1661923835910"/>
+</typeInfoHistroy>

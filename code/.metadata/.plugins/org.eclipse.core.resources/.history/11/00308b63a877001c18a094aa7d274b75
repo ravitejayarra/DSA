@@ -1,0 +1,17 @@
+package com.DSA.Stack;
+
+public class Parantheses {
+
+	public static void main(String[] args) {
+
+		String exp="((a+b)*(c-d)))";
+		char[] expression = exp.toCharArray();
+		
+		for (char c : expression) {
+			System.out.println(c);
+		}
+
+		
+	}
+
+}

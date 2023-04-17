@@ -1,0 +1,74 @@
+package com.Accio.BST;
+
+import java.util.ArrayList;
+
+public class BST {
+
+	
+	public ArrayList<Integer> l1 = new ArrayList<Integer>();
+	
+	public static void main(String[] args) {
+
+		
+		
+	      BST tree = new BST();
+	      Node root = tree.insert(null, 40);
+	      tree.insert(root, 20);
+	      tree.insert(root, 50);
+	      tree.insert(root, 9);
+	      tree.insert(root, 45);
+	      
+	      tree.R_inorder(root);
+	      
+	      ArrayList<Integer> list1 = tree.l1;
+	      
+	      for (Integer i : list1) {
+			System.out.print(i+ " ");
+		}
+		
+	}
+	
+	
+	Node insert(Node root,int data) {
+		if(root == null) {
+			root = new Node(data, null, null);
+		}
+		else {
+			Node t = root;
+			Node prev = null;
+			
+			while(t != null) {
+				prev = t;
+				
+				if(data == t.data) { return root; }
+				else if(data > t.data) { t = t.right ; }
+				else if(data < t.data) { t = t.left ; } 
+				
+			}
+			
+			t = new Node(data, null, null);
+			if(data > prev.data) { prev.right = t; }
+			else { prev.left = t; }
+			
+		}
+		
+		
+		return root;
+	}
+	
+	
+	  void R_inorder(Node node) {
+		
+		if(node != null) {
+			R_inorder(node.left);
+			l1.add(node.data);
+			R_inorder(node.right);
+		}
+		
+	}
+	
+	
+	
+	
+
+}

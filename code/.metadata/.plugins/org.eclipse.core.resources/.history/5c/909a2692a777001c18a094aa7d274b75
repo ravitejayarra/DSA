@@ -1,0 +1,44 @@
+package com.DSA.Stack;
+
+public class Stack_LL {
+
+	LinkedList linkedlist;
+	
+	Stack_LL(){
+		linkedlist = new LinkedList();
+		
+	}
+	
+	
+	boolean isEmpty() {
+		
+		
+		if(linkedlist.size==0) {
+			return true;
+		}
+		else {
+			return false;
+		}
+		
+		
+	}
+	
+	void push(int x) {
+		linkedlist.insertNode(x);
+		
+	}
+	
+	int pop() {
+		if(this.isEmpty()) {
+			return -1;
+		}
+		int x = linkedlist.deleteNode();
+		return x;
+	}
+	
+	int peek() {
+		int x = linkedlist.Headelement();
+		return x;
+	}
+	
+}

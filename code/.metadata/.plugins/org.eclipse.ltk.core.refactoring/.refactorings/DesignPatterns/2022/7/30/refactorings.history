@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Com.GOF.Core.Singleton_DateUtil&apos; to &apos;Singleton&apos;&#x0D;&#x0A;- Original project: &apos;DesignPatterns&apos;&#x0D;&#x0A;- Original element: &apos;Com.GOF.Core.Singleton_DateUtil&apos;&#x0D;&#x0A;- Renamed element: &apos;Com.GOF.Core.Singleton&apos;&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Singleton_DateUtil&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;Com.GOF.Core{Singleton_DateUtil.java[Singleton_DateUtil" matchStrategy="1" name="Singleton" qualified="false" references="false" similarDeclarations="false" stamp="1658553450153" textual="false" version="1.0"/>
+</session>

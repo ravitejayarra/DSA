@@ -1,0 +1,53 @@
+// swapping the kth node
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode swapNodes(ListNode head, int k) {
+     
+        if(head==null || head.next==null){
+            return head;
+        }
+        
+        ListNode dummy = new ListNode();
+        dummy.next = head;
+        ListNode temp=head,left = head,right = head,leftprev = dummy,rightprev = dummy;
+        
+        int count=0;
+        
+        while(temp != null){
+            count++;
+            temp = temp.next;
+        }
+        
+        for(int i=1;i<k;i++){
+            leftprev = left;
+            left = left.next;
+        }
+        
+        for(int i=1;i<count-k+1;i++){
+            rightprev = right;
+            right = right.next;
+        }
+        
+        ListNode rightnext = right.next;
+        ListNode leftnext = left.next;
+        
+        leftprev.next = right;
+        right.next = leftnext;
+        
+        rightprev.next = left;
+        left.next = rightnext;
+        
+        return dummy.next;
+        
+    }
+}
